@@ -15,6 +15,7 @@ jobs:
         run: (Get-Content ConvertConfig.ini) -replace 'AutoExit\s*=\s*0', 'AutoExit=1' | Set-Content ConvertConfig.ini
 
       - name: Run Windows Script (Bypass UAC)
+        shell: cmd
         run: cmd.exe /c uup_download_windows.cmd 49127c4b-02dc-482e-ac4f-ec4d659b7547
         
       - name: Find the generated ISO
