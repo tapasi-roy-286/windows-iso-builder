@@ -11,8 +11,11 @@ jobs:
       - name: Get Files
         uses: actions/checkout@v4
 
-      - name: Run Windows Script
-        run: cmd.exe /c uup_download_windows.cmd
+      - name: Configure Auto-Exit
+        run: (Get-Content ConvertConfig.ini) -replace 'AutoExit\s*=\s*0', 'AutoExit=1' | Set-Content ConvertConfig.ini
+
+      - name: Run Windows Script (Bypass UAC)
+        run: cmd.exe /c uup_download_windows.cmd 49127c4b-02dc-482e-ac4f-ec4d659b7547
         
       - name: Find the generated ISO
         id: find_iso
@@ -25,4 +28,4 @@ jobs:
         with:
           name: windows-iso
           path: ./${{ env.iso_name }}
-          retention-days: 2
+          retention-days: 3
