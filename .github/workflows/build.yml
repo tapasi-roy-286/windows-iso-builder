@@ -1,0 +1,28 @@
+name: Build Windows ISO
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Get Files
+        uses: actions/checkout@v4
+
+      - name: Run Windows Script
+        run: cmd.exe /c uup_download_windows.cmd
+        
+      - name: Find the generated ISO
+        id: find_iso
+        run: |
+          $isoFile = Get-ChildItem -Filter *.iso | Select-Object -First 1
+          echo "iso_name=$($isoFile.Name)" >> $env:GITHUB_ENV
+
+      - name: Upload ISO for you to download
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-iso
+          path: ./${{ env.iso_name }}
+          retention-days: 2
