@@ -4,7 +4,7 @@
 :: Proxy configuration
 :: If you need to configure a proxy to be able to connect to the internet,
 :: then you can do this by configuring the all_proxy environment variable.
-:: By default this variable is commented out, configuring aria2c to use 
+:: By default this variable is commented out, configuring aria2c to use
 :: the proxy settings specified by the system.
 ::
 :: Usage: set "all_proxy=proxy_address"
@@ -52,7 +52,7 @@ SETLOCAL DISABLEDELAYEDEXPANSION
 goto :EOF
 
 :START_PROCESS
-title 26200.8313_amd64_en-us_multi_509ef3a9 download
+title 26200.8524_amd64_en-us_multi_b4d8466a download
 
 set "aria2=files\aria2c.exe"
 set "a7z=files\7zr.exe"
@@ -79,7 +79,7 @@ echo.
 
 :DOWNLOAD_APPS
 echo Retrieving aria2 script for Microsoft Store Apps...
-"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=509ef3a9-3bd5-4341-acb9-d2682c65550b&pack=neutral&edition=app&aria2=2"
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=b4d8466a-0024-4453-a0ed-1e0b9f7793d3&pack=neutral&edition=app&aria2=2"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
 echo.
 
@@ -99,7 +99,7 @@ echo.
 
 :DOWNLOAD_UUPS
 echo Retrieving aria2 script for the UUP set...
-"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=509ef3a9-3bd5-4341-acb9-d2682c65550b&pack=en-us&edition=core%%3Bprofessional&aria2=2"
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=b4d8466a-0024-4453-a0ed-1e0b9f7793d3&pack=en-us&edition=core%%3Bprofessional&aria2=2"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
 echo.
 
