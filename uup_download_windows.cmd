@@ -1,10 +1,10 @@
 @echo off
-:: Generated on 2026-04-30 20:22:56 GMT
+:: Generated on 2026-08-03 01:27:30 GMT
 
 :: Proxy configuration
 :: If you need to configure a proxy to be able to connect to the internet,
 :: then you can do this by configuring the all_proxy environment variable.
-:: By default this variable is commented out, configuring aria2c to use
+:: By default this variable is commented out, configuring aria2c to use 
 :: the proxy settings specified by the system.
 ::
 :: Usage: set "all_proxy=proxy_address"
@@ -52,7 +52,7 @@ SETLOCAL DISABLEDELAYEDEXPANSION
 goto :EOF
 
 :START_PROCESS
-title 26200.8524_amd64_en-us_multi_b4d8466a download
+title 26200.8973_amd64_en-us_multi_b407eb4e download
 
 set "aria2=files\aria2c.exe"
 set "a7z=files\7zr.exe"
@@ -79,7 +79,7 @@ echo.
 
 :DOWNLOAD_APPS
 echo Retrieving aria2 script for Microsoft Store Apps...
-"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=b4d8466a-0024-4453-a0ed-1e0b9f7793d3&pack=neutral&edition=app&aria2=2"
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=b407eb4e-c0c2-47e8-a60c-ae837d058d1e&pack=neutral&edition=app&aria2=2"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
 echo.
 
@@ -99,7 +99,7 @@ echo.
 
 :DOWNLOAD_UUPS
 echo Retrieving aria2 script for the UUP set...
-"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=b4d8466a-0024-4453-a0ed-1e0b9f7793d3&pack=en-us&edition=core%%3Bprofessional&aria2=2"
+"%aria2%" --no-conf --async-dns=false --console-log-level=warn --log-level=info --log="aria2_download.log" -o"%aria2Script%" --allow-overwrite=true --auto-file-renaming=false "https://uupdump.net/get.php?id=b407eb4e-c0c2-47e8-a60c-ae837d058d1e&pack=en-us&edition=core%%3Bprofessional&aria2=2"
 if %ERRORLEVEL% GTR 0 call :DOWNLOAD_ERROR & exit /b 1
 echo.
 
